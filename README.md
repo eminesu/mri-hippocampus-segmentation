@@ -40,6 +40,10 @@ Trained for 30 epochs on a free Colab GPU, the 3D U-Net reaches a **validation m
 
 > `MAX_EPOCHS = 30` is a fast run; increasing it (100–200 epochs) pushes Dice higher still.
 
+The notebook also reports **per-class Dice** (anterior vs. posterior hippocampus) and trains a second
+architecture, **SegResNet**, under the same setup for a head-to-head comparison (saved to
+`assets/model_comparison.png`).
+
 ## Run it locally
 
 ```bash
@@ -55,8 +59,8 @@ Medical image segmentation — especially domain-robust segmentation from MRI �
 
 ## Next steps
 
-- Report **per-class Dice** (anterior vs. posterior) and add k-fold cross-validation.
-- Compare architectures (`SegResNet`, pretrained encoders) and add test-time augmentation.
+- Add **k-fold cross-validation** and test-time augmentation for a more honest estimate.
+- Try a pretrained encoder or attention U-Net; tune patch size / spacing.
 
 ---
 
